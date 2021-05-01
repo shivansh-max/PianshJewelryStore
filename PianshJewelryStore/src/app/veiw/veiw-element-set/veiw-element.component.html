@@ -1,0 +1,38 @@
+<a
+  style="cursor: pointer"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+>
+  <div class="col">
+    <span class="pull-left">
+      <img
+        [src]="jewelry.pic"
+        alt="{{ jewelry.nameOfItem }}"
+        class="img-responsive"
+        style="max-height: 110px; max-width: 110px;"
+      />
+    </span>
+  </div>
+
+  <div class="col">
+    <div class="pull-left"  style="margin-left: 10px; width: auto;">
+      <h4 class="list-group-item-heading">{{ jewelry.nameOfItem }}</h4>
+      <p class="list-group-item-text"> Brand : {{ jewelry.brand }}</p>
+      <p class="list-group-item-text">Purchased From : {{ jewelry.purchasedFrom }}</p>
+      <p class="list-group-item-text">Quantity : {{ jewelry.quantity }}</p>
+      <p class="list-group-item-text">Condition : {{ jewelry.conditionOfItem }}</p>
+      <p class="list-group-item-text"> Metal : {{ jewelry.metal }}</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="pull-left"  style="margin-left: 10px; width: auto;">
+      <p class="list-group-item-text"> Cost : ${{ jewelry.cost }}</p>
+      <p class="list-group-item-text"> OrderId : {{ jewelry.orderId }}</p>
+      <p class="list-group-item-text"> Date Purchased : {{ jewelry.dataPurchesed | date }}</p>
+      <p class="list-group-item-text"> Weight : {{ jewelry.weight }}g.</p>
+      <p class="list-group-item-text"> Stone : {{ jewelry.stone }}</p>
+    </div>
+  </div>
+</a>
+

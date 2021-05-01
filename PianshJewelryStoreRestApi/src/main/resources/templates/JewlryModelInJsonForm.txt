@@ -1,0 +1,43 @@
+{
+    "id": "null",
+    "brand": "null",
+    "purchasedfrom": "null",
+    "nameofitem": "null",
+    "cost": "null",
+    "orderid": "null",
+    "datapuchesed": "null",
+    "pic": "null",
+    "weight": "null",
+    "conditionofitem": "null",
+    "metal": "null",
+    "stone": "null",
+    "quantity": "null",
+    "soldin": "null",
+    "salesprice": "null",
+    "pandoraid": "null",
+    "filler1": "null",
+    "filler2": "null",
+    "filler3": "null"
+}
+
+{
+  "id": {},
+  "brand": {},
+  "purchasedfrom": {},
+  "nameofitem": {},
+  "cost": {},
+  "orderid": {},
+  "datapuchesed": {},
+  "pic": {},
+  "weight": {},
+  "conditionofitem": {},
+  "metal": {},
+  "stone": {},
+  "quantity": {},
+  "soldin": {},
+  "salesprice": {},
+  "pandoraid": {},
+  "filler1": {},
+  "filler2": {},
+  "filler3": {}
+}
