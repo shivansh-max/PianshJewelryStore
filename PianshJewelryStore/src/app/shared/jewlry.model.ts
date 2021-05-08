@@ -13,7 +13,13 @@ export class Jewlry {
     public metal: string,
     public stone: string,
     public quantity: number,
+    public soldin: string,
+    public salesprice: string,
+    public pandoraid: string,
     public fill1: string,
     public fill2: string,
-  ) {}
+    public fill3: string,
+  ) {
+  }
 }
+

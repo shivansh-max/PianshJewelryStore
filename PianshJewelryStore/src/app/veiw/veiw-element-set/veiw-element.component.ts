@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Jewlry } from '../../shared/jewlry.model';
+import { DomSanitizer, SafeUrl , SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-veiw-element',
@@ -11,11 +12,13 @@ export class VeiwElementComponent implements OnInit {
   @Input() jewelry!: Jewlry;
 
   prop = false;
+  safify: SafeResourceUrl | undefined;
 
-  constructor() {}
+  constructor(private sanitizer : DomSanitizer) {
+  }
 
   ngOnInit(): void {
-    
+
   }
 
   trueify() {

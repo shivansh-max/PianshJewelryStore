@@ -20,7 +20,7 @@ import java.util.List;
 
 @RestController
 @Transactional
-@RequestMapping(value = "/piansh")
+@RequestMapping(value = "/piansh", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
 public class Main {
     @Autowired
     SimpleJewelryManagement simpleJewelryManagement;
@@ -101,6 +101,7 @@ public class Main {
 
 
     // POST :
+    @PostMapping("/add")
     public List<Jewelry> addOneJewelry(@RequestBody Jewelry jewelry) {
         return simpleJewelryManagement.addOneJewelry(jewelry);
     }

@@ -3,3 +3,7 @@
 .clear {
   opacity: 0;
 }
+
+.darken {
+  color: black;
+}

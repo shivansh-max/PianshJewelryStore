@@ -1,0 +1,11 @@
+piansh
+getall
+getOne
+search
+pagination
+sort
+paginationSort
+deleteAll
+deleteOne
+edit
+add

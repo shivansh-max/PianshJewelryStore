@@ -64,9 +64,9 @@
         </div>
 
         <div class="form-group form-inline">
-          <label for="image">Image Url :</label>
+          <label for="image">Image Path :</label>
           <input
-            type="file"
+            type="image"
             formControlName="imagePath"
             class="form-control"
             style="width: 70%"
@@ -75,11 +75,12 @@
             #imagePath
           />
         </div>
+<!--        <p>fname=shivansh&x=25&y=9<p>-->
 
         <div class="form-group">
           <div class="row">
             <div class="col-xs-12">
-              <img [src]="imagePath.value" class="img-responsive" />
+              <img [src]="imagePath.value" class="img-responsive"/>
             </div>
           </div>
         </div>
@@ -118,7 +119,7 @@
             style="width: 70%"
             formControlName="datePurchased"
             class="form-control datepicker"
-            
+
           />
         </div>
 
@@ -135,6 +136,42 @@
         </div>
 
         <div class="form-group form-inline">
+          <label for="Sold In">Sold In :</label>
+
+          <input
+            type="text"
+            style="width: 70%"
+            id="Sold In"
+            formControlName="soldin"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group form-inline">
+          <label for="salesprice">Sales Price :</label>
+
+          <input
+            type="text"
+            id="salesprice"
+            formControlName="salesprice"
+            class="form-control"
+            style="width: 70%"
+          />
+        </div>
+
+        <div class="form-group form-inline">
+          <label for="pandoraid">Pandora Id :</label>
+
+          <input
+            type="text"
+            id="pandoraid"
+            style="width: 70%"
+            formControlName="pandoraid"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group form-inline">
           <label for="condition">Condition :</label>
           <div class="radio" *ngFor="let condition of conditions">
             <label>
@@ -145,29 +182,31 @@
               />{{ condition }}
             </label>
           </div>
+
         </div>
 
-        <hr />
+
+        <hr/>
 
         <div class="form-group form-inline">
           <label for="metal">Metal :</label>
           <div class="radio" *ngFor="let metal of metals">
             <label>
-              <input type="radio" formControlName="metal" [value]="metal" />{{
-                metal
+              <input type="radio" formControlName="metal" [value]="metal"/>{{
+              metal
               }}
             </label>
           </div>
         </div>
 
-        <hr />
+        <hr/>
 
         <div class="form-group form-inline">
           <label for="stone">Stone : </label>
           <div class="radio" *ngFor="let stone of stones">
             <label>
-              <input type="radio" formControlName="stone" [value]="stone" />{{
-                stone
+              <input type="radio" formControlName="stone" [value]="stone"/>{{
+              stone
               }}
             </label>
           </div>

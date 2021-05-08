@@ -29,6 +29,7 @@ public class Jewelry {
     int cost;
     String orderid;
     String datapuchesed;
+    String picture;
     int weight;
     String conditionofitem;
     String metal;

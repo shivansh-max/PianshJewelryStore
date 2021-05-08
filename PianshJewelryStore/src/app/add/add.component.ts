@@ -34,7 +34,10 @@ export class AddComponent implements OnInit {
       "condition": new FormControl(null, [Validators.required]),
       "metal": new FormControl(null, [Validators.required]),
       "stone": new FormControl(null, [Validators.required]),
-      "quantity": new FormControl(null, [Validators.required])
+      "quantity": new FormControl(null, [Validators.required]),
+      "soldin": new FormControl(null, [Validators.required]),
+      "salesprice": new FormControl(null, [Validators.required]),
+      "pandoraid": new FormControl(null, [Validators.required])
     });
   }
 
@@ -74,9 +77,13 @@ export class AddComponent implements OnInit {
       this.addForm.value.imagePath,
       this.addForm.value.weight,
       this.addForm.value.condition,
+      this.addForm.value.soldin,
+      this.addForm.value.salesprice,
+      this.addForm.value.pandoraid,
       this.addForm.value.metal,
       this.addForm.value.stone,
       this.addForm.value.quantity,
+      "",
       "",
       ""
       );

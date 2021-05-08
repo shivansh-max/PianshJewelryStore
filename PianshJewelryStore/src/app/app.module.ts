@@ -12,6 +12,9 @@ import { VeiwElementComponent } from './veiw/veiw-element-set/veiw-element.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SearchPipe } from './shared/search.pipe';
+import {HttpClientModule} from '@angular/common/http';
+import { SafeHtmlPipePipe } from './shared/safe-html-pipe.pipe';
+import { SafePipe } from './safe.pipe';
 // import { FilterPipe } from './shared/filter.pipe';
 
 @NgModule({
@@ -24,11 +27,14 @@ import { SearchPipe } from './shared/search.pipe';
     VeiwComponent,
     VeiwElementComponent,
     SearchPipe,
+    SafeHtmlPipePipe,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [],
