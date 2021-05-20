@@ -76,6 +76,17 @@ public class Main {
         return paginationSortJewelryManagement.sortPaginate(whatToSort, ascending, size, page);
     }
 
+    // Password :
+    @GetMapping(value = "/passwords")
+    public List<String> passwords() {
+        List<String> pass = new ArrayList<String>();
+
+        pass.add("Isha");
+        pass.add("MamaIsAwesome");
+
+        return pass;
+    }
+
 
     // ALL DELETES :
 
