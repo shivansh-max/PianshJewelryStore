@@ -1,6 +1,9 @@
 input {
   margin-left: 10px;
   width: 90px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 input.ng-invalid.ng-touched,

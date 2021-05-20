@@ -2,225 +2,203 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <div class="col-xl-12">
       <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-        <!-- <div class="form-group form-inline">
-            <label for=""></label>
-
-            <input
-              type="text"
-              id=""
-              formControlName=""
-              class="form-control"
-            />
-          </div> -->
-
-        <div class="form-group form-inline">
-          <label for="brand">Brand :</label>
-
-          <input
-            type="text"
-            id="username"
-            formControlName="brand"
-            class="form-control"
-            style="width: 80%"
-          />
-        </div>
-
-        <div class="form-group form-inline">
-          <label for="name">Name :</label>
-
-          <input
-            type="text"
-            id="name"
-            formControlName="name"
-            class="form-control"
-            style="width: 80%"
-          />
-        </div>
-
-        <div class="form-group form-inline">
-          <label for="q">Quantity : </label>
-
-          <input
-            type="number"
-            id="q"
-            formControlName="quantity"
-            class="form-control"
-            style="width: 81%"
-          />
-        </div>
-
-        <div class="form-group form-inline">
-          <label for="pf">Purchased From :</label>
-
-          <input
-            type="text"
-            id="pf"
-            formControlName="purchasedFrom"
-            class="form-control"
-            style="width: 75%"
-          />
-        </div>
-
-        <div class="form-group form-inline">
-          <label for="image">Image Path :</label>
-          <input
-            type="image"
-            formControlName="imagePath"
-            class="form-control"
-            style="width: 70%"
-            (change)="onFileSelect($event)"
-            id="image"
-            #imagePath
-          />
-        </div>
-<!--        <p>fname=shivansh&x=25&y=9<p>-->
-
-        <div class="form-group">
+        <div class="col-lg-6">
           <div class="row">
-            <div class="col-xs-12">
-              <img [src]="imagePath.value" class="img-responsive"/>
+            <div class="col-lg-6 form-group form-inline">
+              <label for="brand">Brand :</label>
+              <input
+                type="text"
+                id="username"
+                formControlName="brand"
+                class="form-control"
+              />
+            </div>
+
+            <div class="col-lg-6 form-group form-inline">
+              <label for="name">Name :</label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-control"
+              />
             </div>
           </div>
-        </div>
+          <div class="row">
 
-        <div class="form-group form-inline">
-          <label for="purchasedAt">Cost : </label>
+            <div class="col-lg-6">
+              <div class="form-group form-inline">
+                <label for="q">Quantity : </label>
 
-          <input
-            type="number"
-            step="0.01"
-            id="purchasedAt"
-            formControlName="cost"
-            class="form-control"
-            style="width: 85.1%"
-          />
-        </div>
+                <input
+                  type="number"
+                  id="q"
+                  formControlName="quantity"
+                  class="form-control"
+                />
+              </div>
+            </div>
 
-        <div class="form-group form-inline">
-          <label for="orderId">Order Id :</label>
+            <div class="col-lg-6">
+              <div class="form-group form-inline">
+                <label for="pf">Purchased From :</label>
 
-          <input
-            type="text"
-            id="orderId"
-            formControlName="orderId"
-            class="form-control"
-            style="width: 87%"
-          />
-        </div>
-
-        <div class="form-group form-inline">
-          <label for="datePurchased">Date Purchased :</label>
-
-          <input
-            type="date"
-            id="datePurchased"
-            style="width: 70%"
-            formControlName="datePurchased"
-            class="form-control datepicker"
-
-          />
-        </div>
-
-        <div class="form-group form-inline">
-          <label for="weight">Weight : </label>
-
-          <input
-            type="number"
-            id="weight"
-            style="width: 89%"
-            formControlName="weight"
-            class="form-control"
-          />
-        </div>
-
-        <div class="form-group form-inline">
-          <label for="Sold In">Sold In :</label>
-
-          <input
-            type="text"
-            style="width: 70%"
-            id="Sold In"
-            formControlName="soldin"
-            class="form-control"
-          />
-        </div>
-
-        <div class="form-group form-inline">
-          <label for="salesprice">Sales Price :</label>
-
-          <input
-            type="text"
-            id="salesprice"
-            formControlName="salesprice"
-            class="form-control"
-            style="width: 70%"
-          />
-        </div>
-
-        <div class="form-group form-inline">
-          <label for="pandoraid">Pandora Id :</label>
-
-          <input
-            type="text"
-            id="pandoraid"
-            style="width: 70%"
-            formControlName="pandoraid"
-            class="form-control"
-          />
-        </div>
-
-        <div class="form-group form-inline">
-          <label for="condition">Condition :</label>
-          <div class="radio" *ngFor="let condition of conditions">
-            <label>
-              <input
-                type="radio"
-                formControlName="condition"
-                [value]="condition"
-              />{{ condition }}
-            </label>
+                <input
+                  type="text"
+                  id="pf"
+                  formControlName="purchasedFrom"
+                  class="form-control"
+                />
+              </div>
+            </div>
           </div>
+          <div class="row">
 
-        </div>
+            <div class="col-lg-6">
+              <div class="form-group form-inline">
+                <label for="image">Image Path :</label>
+                <input
+                  type="text"
+                  formControlName="imagePath"
+                  class="form-control"
+                  (change)="onFileSelect($event)"
+                  id="image"
+                  #imagePath
+                />
+              </div>
+            </div>
 
+            <div class="col-lg-6">
+              <div class="form-group form-inline">
+                <label for="purchasedAt">Cost : </label>
 
-        <hr/>
+                <input
+                  type="number"
+                  step="0.01"
+                  id="purchasedAt"
+                  formControlName="cost"
+                  class="form-control"
+                />
+              </div>
+            </div>
 
-        <div class="form-group form-inline">
-          <label for="metal">Metal :</label>
-          <div class="radio" *ngFor="let metal of metals">
-            <label>
-              <input type="radio" formControlName="metal" [value]="metal"/>{{
-              metal
-              }}
-            </label>
+          </div>
+          <div class="row">
+
+            <div class="col-lg-6">
+              <div class="form-group form-inline">
+                <label for="orderId">Order Id :</label>
+
+                <input
+                  type="text"
+                  id="orderId"
+                  formControlName="orderId"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group form-inline">
+                <label for="datePurchased">Date Purchased :</label>
+
+                <input
+                  type="date"
+                  id="datePurchased"
+                  formControlName="datePurchased"
+                  class="form-control datepicker"
+
+                />
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-lg-6">
+              <div class="form-group form-inline">
+                <label for="weight">Weight : </label>
+
+                <input
+                  type="number"
+                  id="weight"
+                  formControlName="weight"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group form-inline">
+                <label for="Sold In">Sold In :</label>
+
+                <input
+                  type="text"
+                  id="Sold In"
+                  formControlName="soldin"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-lg-6">
+              <div class="form-group form-inline">
+                <label for="salesprice">Sales Price :</label>
+
+                <input
+                  type="text"
+                  id="salesprice"
+                  formControlName="salesprice"
+                  class="form-control"
+                  style="width: 70%"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group form-inline">
+                <label for="pandoraid">Pandora Id :</label>
+
+                <input
+                  type="text"
+                  id="pandoraid"
+                  style="width: 70%"
+                  formControlName="pandoraid"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <ul class="col-lg-6">
+              <li class="dropdown" appDropdown>
+                <a class="dropdown-toggle btn btn-warning" role="button">
+                  Condition
+                  <span class="caret" style="margin-bottom: 5px"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li *ngFor="let con of conditions; let i = index">
+                    <a  style="cursor: pointer">{{ con }}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
-
-        <hr/>
-
-        <div class="form-group form-inline">
-          <label for="stone">Stone : </label>
-          <div class="radio" *ngFor="let stone of stones">
-            <label>
-              <input type="radio" formControlName="stone" [value]="stone"/>{{
-              stone
-              }}
-            </label>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <img [src]="imagePath.value" class="img-responsive"/>
           </div>
         </div>
-
-        <button
-          class="btn btn-primary form-control"
-          type="submit"
-          [disabled]="!addForm.valid"
-          style="background-color: transparent; color: darkblue"
-        >
-          Save
-        </button>
       </form>
     </div>
   </div>
 </div>
+
+

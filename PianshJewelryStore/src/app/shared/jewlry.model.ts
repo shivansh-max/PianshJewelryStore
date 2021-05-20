@@ -1,6 +1,6 @@
 export class Jewlry {
   constructor(
-    public id: number,
+    public id: string,
     public brand: string,
     public purchasedFrom: string,
     public nameOfItem: string,

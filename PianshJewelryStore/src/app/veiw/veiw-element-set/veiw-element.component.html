@@ -1,6 +1,9 @@
 <a
   style="cursor: pointer"
   routerLinkActive="active"
+  [routerLink]="['/edit-jewelry-page']  "
+  [queryParams]="{id : jewelry.id, index : index}"
+  fragment="editing"
   class="list-group-item clearfix"
 >
   <div class="col">

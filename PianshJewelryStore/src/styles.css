@@ -7,3 +7,27 @@
 .darken {
   color: black;
 }
+
+input {
+  margin-left: 10px;
+  width: 90px;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+.blackboard {
+  background: black;
+  color: #ff00d9;
+}
+
+.Fifty-Fifty{
+  width: 50%;
+}
+
+.Fifty-Fifty-Fifty-Fifty{
+  width: 50%;
+  height: 50%;
+}

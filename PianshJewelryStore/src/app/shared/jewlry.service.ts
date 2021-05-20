@@ -1,5 +1,5 @@
 import {Injectable, OnInit, resolveForwardRef} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {Jewlry} from './jewlry.model';
 import {ApiManagerService} from './api-manager.service';
 
@@ -9,20 +9,11 @@ import {ApiManagerService} from './api-manager.service';
 
 export class JewlryService implements OnInit {
   ngOnInit(): void {
-    // console.log(this.jewlries);
-    //
-    // this.api.getAll().subscribe((jewelries) => {
-    //   this.jewlries = jewelries;
-    //   console.log(jewelries);
-    //   console.log(this.jewlries);
-    // });
-    //
-    // console.log(this.jewlries);
-
   }
 
   public jewlrysChanged = new Subject<Jewlry[]>();
 
+  jewelriesObserver!: Observable<Jewlry[]>;
   jewlries: Jewlry[] = [];
 
   constructor(private api: ApiManagerService) {
@@ -31,15 +22,42 @@ export class JewlryService implements OnInit {
   add(jewlry: Jewlry) {
     this.jewlries.push(jewlry);
     this.jewlrysChanged.next(this.jewlries.slice());
-    console.log(this.jewlries);
+
+    this.api.add(jewlry).subscribe((results) => {
+      console.log(results);
+    });
+
+    this.getJewlries();
   }
 
   getJewlries(): Jewlry[] {
     this.api.getAll().subscribe((jewelries) => {
       this.jewlries = jewelries;
-      console.log(jewelries);
-      console.log(this.jewlries);
+      this.jewlrysChanged.next(this.jewlries.slice());
     });
     return this.jewlries.slice();
   }
+
+  getByIndex(index: number) {
+    return this.jewlries[index];
+  }
+
+  deleteJewelry(index: number) {
+    const id: string = this.jewlries[index].id;
+    console.log(this.jewlries);
+    this.jewlries.splice(index, 1);
+    console.log(this.jewlries);
+    this.jewlrysChanged.next(this.jewlries.slice());
+    this.api.delete(id).subscribe((result) => {
+    });
+
+  }
+
+  editJewelry(index: number, newJewelry: Jewlry) {
+    console.log(newJewelry);
+    this.deleteJewelry(index);
+    this.add(newJewelry);
+  }
 }
+
+

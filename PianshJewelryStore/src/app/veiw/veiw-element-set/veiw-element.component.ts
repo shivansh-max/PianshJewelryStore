@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Jewlry } from '../../shared/jewlry.model';
+import { Jewlry } from '../../Shared/jewlry.model';
 import { DomSanitizer, SafeUrl , SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
