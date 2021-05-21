@@ -1,0 +1,27 @@
+input, button{
+  height: 35px;
+  font-family: "Comic Sans MS";
+  font-size: 1em;
+  font-weight: bold;
+  padding: 2px;
+  margin: 2px 2px 2px 2px;
+  border-radius: 5px;
+}
+
+select, option {
+  margin: 2px 2px 2px 2px;
+  height: 35px;
+}
+
+.shad {
+  color: white;
+  width: 100px;
+}
+
+
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

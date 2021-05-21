@@ -42,6 +42,30 @@ export class AddComponent implements OnInit {
     });
   }
 
+  chooseCon(event: any) {
+    this.addForm.setValue(
+      {
+        'condition' : event.target.value
+      }
+    );
+  }
+
+  chooseMet(event: any) {
+    this.addForm.setValue(
+      {
+        'metal' : event.target.value
+      }
+    );
+  }
+
+  chooseStone(event: any) {
+    this.addForm.setValue(
+      {
+        'stone' : event.target.value
+      }
+    );
+  }
+
   logger() {
     console.log(this.addForm);
   }

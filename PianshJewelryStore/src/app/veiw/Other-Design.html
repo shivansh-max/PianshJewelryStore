@@ -1,0 +1,97 @@
+<div class="form-inline my-2 my-lg-5">
+  <input
+    class="form-control mr-sm-7"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+    width="width: 2000;"
+    style="margin-top: 11px"
+    [(ngModel)]="searched"
+  />
+  <ul class="nav navbar-nav navbar-left">
+    <li class="dropdown" appDropdown>
+      <a
+        style="cursor: pointer"
+        class="dropdown-toggle btn btn-info"
+        role="button"
+      >Look In <span class="caret" style="margin-bottom: 5px"></span
+      ></a>
+      <ul class="dropdown-menu">
+        <li><a style="cursor: pointer" (click)="setstr('brand')">Brand</a></li>
+        <li>
+          <a style="cursor: pointer" (click)="setstr('purchasedFrom')"
+          >Purchased Form</a
+          >
+        </li>
+        <li>
+          <a style="cursor: pointer" (click)="setstr('nameOfItem')"
+          >Name Of Item</a
+          >
+        </li>
+        <li><a style="cursor: pointer" (click)="setstr('cost')">Cost</a></li>
+        <li>
+          <a style="cursor: pointer" (click)="setstr('weight')"
+          >Weight</a
+          >
+        </li>
+        <li>
+          <a style="cursor: pointer" (click)="setstr('conditionOfItem')"
+          >Condition</a
+          >
+        </li>
+        <li><a style="cursor: pointer" (click)="setstr('metal')">Metal</a></li>
+        <li><a style="cursor: pointer" (click)="setstr('stone')">Stone</a></li>
+        <li>
+          <a style="cursor: pointer" (click)="setstr('quantity')">Quantity</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown" appDropdown>
+      <a
+        style="cursor: pointer;"
+        class="dropdown-toggle btn btn-info"
+        role="button"
+      >Sort By <span class="caret" style="margin-bottom: 5px"></span
+      ></a>
+      <ul class="dropdown-menu">
+        <li><a style="cursor: pointer">Brand</a></li>
+        <li><a style="cursor: pointer">Purchased Form</a></li>
+        <li><a style="cursor: pointer">Name Of Item</a></li>
+        <li><a style="cursor: pointer">Cost</a></li>
+        <li><a style="cursor: pointer">Date Purchased Oldest</a></li>
+        <li><a style="cursor: pointer">Date Purchased Newest</a></li>
+        <li><a style="cursor: pointer">Weight</a></li>
+        <li><a style="cursor: pointer">Condition</a></li>
+        <li><a style="cursor: pointer">Metal</a></li>
+        <li><a style="cursor: pointer">Stone</a></li>
+        <li><a style="cursor: pointer">Quantity</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<hr style="color: black"/>
+<div class="col-xl-12">
+  <div class="row">
+    <div class="col">
+      <app-veiw-element
+        *ngFor="let jewlryEl of jewlries | search:searched:searchprop let i = index"
+        [jewelry]="jewlryEl"
+        [index]="i"
+      ></app-veiw-element>
+    </div>
+  </div>
+</div>
+
+<hr/>
+
+<div class="col-xl-12">
+  <button class="btn btn-success form-control">Veiw All</button>
+</div>
+
+<hr>
+
+<app-sitemap></app-sitemap>

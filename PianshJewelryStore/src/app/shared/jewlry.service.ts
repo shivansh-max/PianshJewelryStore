@@ -54,9 +54,10 @@ export class JewlryService implements OnInit {
   }
 
   editJewelry(index: number, newJewelry: Jewlry) {
-    console.log(newJewelry);
-    this.deleteJewelry(index);
-    this.add(newJewelry);
+    this.api.edit(newJewelry).subscribe((output) => {
+      console.log(output);
+    });
+    this.getJewlries();
   }
 }
 

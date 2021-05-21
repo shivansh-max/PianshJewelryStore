@@ -1,97 +1,84 @@
-<div class="form-inline my-2 my-lg-5">
-  <input
-    class="form-control mr-sm-7"
-    type="search"
-    placeholder="Search"
-    aria-label="Search"
-    width="width: 2000;"
-    style="margin-top: 11px"
-    [(ngModel)]="searched"
-  />
-  <ul class="nav navbar-nav navbar-left">
-    <li class="dropdown" appDropdown>
-      <a
-        style="cursor: pointer"
-        class="dropdown-toggle btn btn-info"
-        role="button"
-      >Look In <span class="caret" style="margin-bottom: 5px"></span
-      ></a>
-      <ul class="dropdown-menu">
-        <li><a style="cursor: pointer" (click)="setstr('brand')">Brand</a></li>
-        <li>
-          <a style="cursor: pointer" (click)="setstr('purchasedFrom')"
-          >Purchased Form</a
-          >
-        </li>
-        <li>
-          <a style="cursor: pointer" (click)="setstr('nameOfItem')"
-          >Name Of Item</a
-          >
-        </li>
-        <li><a style="cursor: pointer" (click)="setstr('cost')">Cost</a></li>
-        <li>
-          <a style="cursor: pointer" (click)="setstr('weight')"
-          >Weight</a
-          >
-        </li>
-        <li>
-          <a style="cursor: pointer" (click)="setstr('conditionOfItem')"
-          >Condition</a
-          >
-        </li>
-        <li><a style="cursor: pointer" (click)="setstr('metal')">Metal</a></li>
-        <li><a style="cursor: pointer" (click)="setstr('stone')">Stone</a></li>
-        <li>
-          <a style="cursor: pointer" (click)="setstr('quantity')">Quantity</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul class="nav navbar-nav navbar-right">
-    <li class="dropdown" appDropdown>
-      <a
-        style="cursor: pointer;"
-        class="dropdown-toggle btn btn-info"
-        role="button"
-      >Sort By <span class="caret" style="margin-bottom: 5px"></span
-      ></a>
-      <ul class="dropdown-menu">
-        <li><a style="cursor: pointer">Brand</a></li>
-        <li><a style="cursor: pointer">Purchased Form</a></li>
-        <li><a style="cursor: pointer">Name Of Item</a></li>
-        <li><a style="cursor: pointer">Cost</a></li>
-        <li><a style="cursor: pointer">Date Purchased Oldest</a></li>
-        <li><a style="cursor: pointer">Date Purchased Newest</a></li>
-        <li><a style="cursor: pointer">Weight</a></li>
-        <li><a style="cursor: pointer">Condition</a></li>
-        <li><a style="cursor: pointer">Metal</a></li>
-        <li><a style="cursor: pointer">Stone</a></li>
-        <li><a style="cursor: pointer">Quantity</a></li>
-      </ul>
-    </li>
-  </ul>
-</div>
-
-<hr style="color: black"/>
 <div class="col-xl-12">
+
   <div class="row">
-    <div class="col">
-      <app-veiw-element
-        *ngFor="let jewlryEl of jewlries | search:searched:searchprop let i = index"
-        [jewelry]="jewlryEl"
-        [index]="i"
-      ></app-veiw-element>
+
+    <div class="main">
+
+      <input
+        type="text"
+        placeholder="Search"
+        width="100p"
+        class="form-control blue"
+        [ngModel]="searchprop">
+      <button class="btn btn-danger">🔍</button>
+
+      <button class="btn btn-danger shad">
+        View All
+      </button>
+
+      <select
+        class="btn btn-danger"
+        name="Look~In"
+        style="color: white;"
+        (change)="setstr($event)">
+        <option style="color: white">Look~In</option>
+        <option
+          value=""
+          class="form-control"
+          *ngFor="let prop of props"
+          [ngValue]="prop">
+          {{prop}}
+        </option>
+      </select>
+
+      <select
+        class="btn btn-danger"
+        name="Look~In"
+        style="color: white;">
+        <option style="color: white">Sort-by</option>
+        <option
+          value=""
+          class="form-control"
+          *ngFor="let prop of props"
+          [ngValue]="prop">
+          {{prop}}
+        </option>
+      </select>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="main">
+      <button (click)="changePage(false)" class="quad btn btn-info">⟸</button>
+      <button (click)="changePage(true)" class="quad btn btn-info">⟹</button>
+      <button (click)="changeAmount(true)" class="quad btn-happy">⇑</button>
+      <button (click)="changeAmount(false)" class="quad btn-happy">⇓</button>
+    </div>
+    <div class="main">
+      <div class="width-fifty main">
+        <h3 style="color: #000000;">Page : </h3>
+        <h3 style="color: #5bc0de;">{{ page + 1 }}</h3>
+      </div>
+      <div class="width-fifty main">
+        <h3 style="color: #000000;">Pagination Amount : </h3>
+        <h3 style="color: #ff00f7;">{{ amount + 1 }}</h3>
+      </div>
     </div>
   </div>
+
+  <hr>
+
+  <ul class="list-group">
+    <app-veiw-element
+      *ngFor="let jewel of jewlries; let i = index"
+      [jewelry]="jewel"
+      [index]="i"
+      [color]="i%2 == 0">
+    </app-veiw-element>
+  </ul>
+
 </div>
-
-<hr/>
-
-<div class="col-xl-12">
-  <button class="btn btn-success form-control">Veiw All</button>
-</div>
-
-<hr>
 
 <app-sitemap></app-sitemap>

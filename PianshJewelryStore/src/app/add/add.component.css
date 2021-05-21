@@ -1,9 +1,13 @@
-input {
+input, select, option {
   margin-left: 10px;
   width: 90px;
   font-weight: bold;
   margin-bottom: 0.5rem;
   display: block;
+}
+
+select, option {
+  width: 300px;
 }
 
 input.ng-invalid.ng-touched,

@@ -1,10 +1,15 @@
 <!-- <button class="btn btn-warning form-control" (click)="logger()">logger</button> -->
 
 <div class="container">
+
   <div class="row">
+
     <div class="col-xl-12">
+
       <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
         <div class="col-lg-6">
+
           <div class="row">
             <div class="col-lg-6 form-group form-inline">
               <label for="brand">Brand :</label>
@@ -26,6 +31,7 @@
               />
             </div>
           </div>
+
           <div class="row">
 
             <div class="col-lg-6">
@@ -54,13 +60,14 @@
               </div>
             </div>
           </div>
+
           <div class="row">
 
             <div class="col-lg-6">
               <div class="form-group form-inline">
                 <label for="image">Image Path :</label>
                 <input
-                  type="text"
+                  type="url"
                   formControlName="imagePath"
                   class="form-control"
                   (change)="onFileSelect($event)"
@@ -85,6 +92,7 @@
             </div>
 
           </div>
+
           <div class="row">
 
             <div class="col-lg-6">
@@ -115,6 +123,7 @@
             </div>
 
           </div>
+
           <div class="row">
 
             <div class="col-lg-6">
@@ -144,6 +153,7 @@
             </div>
 
           </div>
+
           <div class="row">
 
             <div class="col-lg-6">
@@ -155,7 +165,6 @@
                   id="salesprice"
                   formControlName="salesprice"
                   class="form-control"
-                  style="width: 70%"
                 />
               </div>
             </div>
@@ -167,7 +176,6 @@
                 <input
                   type="text"
                   id="pandoraid"
-                  style="width: 70%"
                   formControlName="pandoraid"
                   class="form-control"
                 />
@@ -175,30 +183,57 @@
             </div>
 
           </div>
+
           <div class="row">
-            <ul class="col-lg-6">
-              <li class="dropdown" appDropdown>
-                <a class="dropdown-toggle btn btn-warning" role="button">
-                  Condition
-                  <span class="caret" style="margin-bottom: 5px"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li *ngFor="let con of conditions; let i = index">
-                    <a  style="cursor: pointer">{{ con }}</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+
+            <div class="col-lg-4 form-group form-inline">
+              <label for="con">Condition : </label>
+              <br>
+              <select class="form-control" name="Condition" id="con" (change)="chooseCon($event)">
+                <option value="" disabled>Condition Of Item</option>
+                <option class="form-control" *ngFor="let con of conditions; let i = index"
+                        [ngValue]="con">{{con}}</option>
+              </select>
+            </div>
+
+            <div class="col-lg-4 form-group form-inline">
+              <label for="met">Metal : </label>
+              <br>
+              <select class="form-control" name="Metal" id="met" (change)="chooseMet($event)">
+                <option value="" disabled>Metal</option>
+                <option class="form-control" *ngFor="let met of metals" [ngValue]="met">{{met}}</option>
+              </select>
+            </div>
+
+            <div class="col-lg-4 form-group form-inline">
+              <label for="sto">Stone : </label>
+              <br>
+              <select class="form-control" name="Stone" id="sto" (change)="chooseStone($event)">
+                <option value="" disabled>Stone</option>
+                <option class="form-control" *ngFor="let stone of stones" [ngValue]="stone">{{stone}}</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <button class="btn btn-primary form-control" type="submit">Submit</button>
           </div>
         </div>
+
         <div class="col-lg-6">
           <div class="form-group">
             <img [src]="imagePath.value" class="img-responsive"/>
           </div>
         </div>
+
       </form>
+
+
     </div>
+
   </div>
+
 </div>
 
 

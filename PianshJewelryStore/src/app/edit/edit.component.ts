@@ -54,7 +54,6 @@ export class EditComponent implements OnInit {
     });
   }
 
-
   onSubmit(){
     this.jewelryService.editJewelry(this.index, new Jewlry(
       this.jewelry.id,
@@ -102,6 +101,29 @@ export class EditComponent implements OnInit {
 
   onDelete() {
     this.jewelryService.deleteJewelry(this.index);
-    // this.router.navigate(['/home']);
+  }
+
+  chooseCon(event: any) {
+    this.editForm.setValue(
+      {
+        'condition' : event.target.value
+      }
+    );
+  }
+
+  chooseMet(event: any) {
+    this.editForm.setValue(
+      {
+        'metal' : event.target.value
+      }
+    );
+  }
+
+  chooseStone(event: any) {
+    this.editForm.setValue(
+      {
+        'stone' : event.target.value
+      }
+    );
   }
 }

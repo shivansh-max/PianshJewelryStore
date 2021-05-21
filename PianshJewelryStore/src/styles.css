@@ -20,14 +20,32 @@ textarea.ng-invalid.ng-touched{
 
 .blackboard {
   background: black;
-  color: #ff00d9;
+  color: white;
 }
 
-.Fifty-Fifty{
+.width-fifty{
   width: 50%;
 }
 
-.Fifty-Fifty-Fifty-Fifty{
+.height-fifty{
+  height: 50%;
+}
+
+.width-height-fifty{
   width: 50%;
   height: 50%;
+}
+
+.quad {
+  width: 25%;
+}
+
+.btn-happy {
+  color: #fff;
+  background-color: #ff00f7;
+  border-color: #ff00f7;
+}
+
+.blue {
+  text-decoration-color: #5bc0de;
 }

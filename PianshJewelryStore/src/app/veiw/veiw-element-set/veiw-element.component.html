@@ -1,11 +1,12 @@
 <a
-  style="cursor: pointer"
   routerLinkActive="active"
+  style="cursor: pointer"
   [routerLink]="['/edit-jewelry-page']  "
+  *ngIf="color == true"
   [queryParams]="{id : jewelry.id, index : index}"
   fragment="editing"
-  class="list-group-item clearfix"
->
+  class="list-group-item list-group-item-info clearfix">
+
   <div class="col">
     <span class="pull-left">
       <img
@@ -17,10 +18,10 @@
     </span>
   </div>
 
-<!--  [innerHTML]="htmlTemplate | safeHtml"-->
+  <!--  [innerHTML]="htmlTemplate | safeHtml"-->
 
   <div class="col">
-    <div class="pull-left"  style="margin-left: 10px; width: auto;">
+    <div class="pull-left" style="margin-left: 10px; width: auto;">
       <h4 class="list-group-item-heading">{{ jewelry.nameOfItem }}</h4>
       <p class="list-group-item-text"> Brand : {{ jewelry.brand }}</p>
       <p class="list-group-item-text">Purchased From : {{ jewelry.purchasedFrom }}</p>
@@ -31,12 +32,60 @@
   </div>
 
   <div class="col">
-    <div class="pull-left"  style="margin-left: 10px; width: auto;">
+    <div class="pull-left" style="margin-left: 10px; width: auto;">
       <p class="list-group-item-text"> Cost : ${{ jewelry.cost }}</p>
       <p class="list-group-item-text"> OrderId : {{ jewelry.orderId }}</p>
       <p class="list-group-item-text"> Date Purchased : {{ jewelry.dataPurchesed | date }}</p>
       <p class="list-group-item-text"> Weight : {{ jewelry.weight }}g.</p>
       <p class="list-group-item-text"> Stone : {{ jewelry.stone }}</p>
+    </div>
+  </div>
+</a>
+
+
+<a
+  style="cursor: pointer"
+  routerLinkActive="active"
+  *ngIf="color == false"
+  [routerLink]="['/edit-jewelry-page']  "
+  [queryParams]="{id : jewelry.id, index : index}"
+  fragment="editing"
+  class="list-group-item clearfix">
+
+  <div class="col">
+    <span class="pull-left">
+      <img
+        [src]="jewelry.pic"
+        alt="{{ jewelry.nameOfItem }}"
+        class="img-responsive"
+        style="max-height: 110px; max-width: 110px;"
+      />
+    </span>
+  </div>
+
+  <!--  [innerHTML]="htmlTemplate | safeHtml"-->
+
+  <div class="col">
+    <div class="pull-left" style="margin-left: 10px; width: auto;">
+      <h4 class="list-group-item-heading">{{ jewelry.nameOfItem }}</h4>
+      <p class="list-group-item-text"> Brand : {{ jewelry.brand }}</p>
+      <p class="list-group-item-text">Purchased From : {{ jewelry.purchasedFrom }}</p>
+      <p class="list-group-item-text">Quantity : {{ jewelry.quantity }}</p>
+      <p class="list-group-item-text">Condition : {{ jewelry.conditionOfItem }}</p>
+      <p class="list-group-item-text"> Metal : {{ jewelry.metal }}</p>
+      <p class="list-group-item-text"> Date Purchased : {{ jewelry.dataPurchesed | date }}</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="pull-left" style="margin-left: 10px; width: auto;">
+      <p class="list-group-item-text"> Cost : ${{ jewelry.cost }}</p>
+      <p class="list-group-item-text"> OrderId : {{ jewelry.orderId }}</p>
+      <p class="list-group-item-text"> Weight : {{ jewelry.weight }}g.</p>
+      <p class="list-group-item-text"> Stone : {{ jewelry.stone }}</p>
+      <p class="list-group-item-text"> Sales Price : ${{ jewelry.salesprice }}</p>
+      <p class="list-group-item-text"> Sold In : {{ jewelry.orderId }}</p>
+      <p class="list-group-item-text"> Pandora Id : {{ jewelry.dataPurchesed | date }}</p>
     </div>
   </div>
 </a>

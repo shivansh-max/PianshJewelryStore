@@ -28,11 +28,11 @@ export class ApiManagerService implements OnInit {
 
             // console.log(results);
 
-            for (var jewelry of results) {
-              // console.log(jewelry);
+            for (var jewlry of results) {
+              // console.log(jewlry);
 
               changed_results.push(
-                new Jewlry(jewelry.id, jewelry.brand, jewelry.purchasedfrom, jewelry.nameofitem, jewelry.cost, jewelry.orderid, jewelry.datapuchesed, jewelry.picture, jewelry.weight, jewelry.conditionofitem, jewelry.metal, jewelry.stone, jewelry.quantity, jewelry.soldin, jewelry.salesprice, jewelry.pandoraid, '', '', ''));
+                new Jewlry(jewlry.id, jewlry.brand, jewlry.purchasedfrom, jewlry.nameofitem, jewlry.cost, jewlry.orderid, jewlry.datapuchesed, jewlry.picture, jewlry.weight, jewlry.conditionofitem, jewlry.metal, jewlry.stone, jewlry.quantity, jewlry.soldin, jewlry.salesprice, jewlry.pandoraid, '', '', ''));
             }
 
             return changed_results;
@@ -41,30 +41,30 @@ export class ApiManagerService implements OnInit {
       );
   }
 
-  add(jewelry : Jewlry) {
-    let stri = Math.random().toString(36).substring(2)
+  add(jewlry: Jewlry) {
+    let stri = Math.random().toString(36).substring(2);
 
     var post_json = {
-      "id": stri,
-      "brand": jewelry.brand,
-      "purchasedfrom": jewelry.purchasedFrom,
-      "nameofitem": jewelry.nameOfItem,
-      "cost": jewelry.cost,
-      "orderid": jewelry.orderId,
-      "datapuchesed": jewelry.dataPurchesed,
-      "pic": jewelry.pic,
-      "weight": jewelry.weight,
-      "conditionofitem": jewelry.conditionOfItem,
-      "metal": jewelry.metal,
-      "stone": jewelry.stone,
-      "quantity": jewelry.quantity,
-      "soldin": jewelry.soldin,
-      "salesprice": jewelry.salesprice,
-      "pandoraid": jewelry.pandoraid,
-      "filler1": jewelry.fill1,
-      "filler2": jewelry.fill2,
-      "filler3": jewelry.fill3
-    }
+      'id': stri,
+      'brand': jewlry.brand,
+      'purchasedfrom': jewlry.purchasedFrom,
+      'nameofitem': jewlry.nameOfItem,
+      'cost': jewlry.cost,
+      'orderid': jewlry.orderId,
+      'datapuchesed': jewlry.dataPurchesed,
+      'picture': jewlry.pic,
+      'weight': jewlry.weight,
+      'conditionofitem': jewlry.conditionOfItem,
+      'metal': jewlry.metal,
+      'stone': jewlry.stone,
+      'quantity': jewlry.quantity,
+      'soldin': jewlry.soldin,
+      'salesprice': jewlry.salesprice,
+      'pandoraid': jewlry.pandoraid,
+      'filler1': jewlry.fill1,
+      'filler2': jewlry.fill2,
+      'filler3': jewlry.fill3
+    };
 
     // console.log(post_json);
 
@@ -73,7 +73,36 @@ export class ApiManagerService implements OnInit {
   }
 
   delete(id: string) {
-    let params = new HttpParams().set("id", id.toString());
+    let params = new HttpParams().set('id', id.toString());
     return this.http.delete(this.apis.main + 'deleteOne', {params});
+  }
+
+  edit(jewlry: Jewlry) {
+    var post_json = {
+      'id': jewlry.id,
+      'brand': jewlry.brand,
+      'purchasedfrom': jewlry.purchasedFrom,
+      'nameofitem': jewlry.nameOfItem,
+      'cost': jewlry.cost,
+      'orderid': jewlry.orderId,
+      'datapuchesed': jewlry.dataPurchesed,
+      'picture': jewlry.pic,
+      'weight': jewlry.weight,
+      'conditionofitem': jewlry.conditionOfItem,
+      'metal': jewlry.metal,
+      'stone': jewlry.stone,
+      'quantity': jewlry.quantity,
+      'soldin': jewlry.soldin,
+      'salesprice': jewlry.salesprice,
+      'pandoraid': jewlry.pandoraid,
+      'filler1': jewlry.fill1,
+      'filler2': jewlry.fill2,
+      'filler3': jewlry.fill3
+    };
+
+    console.log(post_json);
+
+    let params = new HttpParams().set('id', jewlry.id);
+    return this.http.put(this.apis.main + 'edit', post_json, {params});
   }
 }

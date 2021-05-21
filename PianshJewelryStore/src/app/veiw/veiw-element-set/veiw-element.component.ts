@@ -10,6 +10,7 @@ import { DomSanitizer, SafeUrl , SafeResourceUrl} from '@angular/platform-browse
 export class VeiwElementComponent implements OnInit {
   @Input() index!: number;
   @Input() jewelry!: Jewlry;
+  @Input() color!: boolean;
 
   prop = false;
   safify: SafeResourceUrl | undefined;
@@ -18,7 +19,7 @@ export class VeiwElementComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    console.log(this.color);
   }
 
   trueify() {
