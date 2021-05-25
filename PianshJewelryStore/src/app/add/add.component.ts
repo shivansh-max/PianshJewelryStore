@@ -104,7 +104,7 @@ export class AddComponent implements OnInit {
 
     this.clear();
 
-    this.router.navigate(['/home']);
+    this.router.navigate(['/add']);
   }
 
   clear() {

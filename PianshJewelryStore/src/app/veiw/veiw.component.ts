@@ -14,14 +14,14 @@ export class VeiwComponent implements OnInit {
   props:string[] = [
     'id',
     'brand',
-    'purchasedFrom',
-    'maneOfItem',
+    'place',
+    'name',
     'cost',
     'orderId',
-    'datePurchesed',
+    'date',
     'pic',
     'weight',
-    'conditionOfItem',
+    'condition',
     'metal',
     'stone',
     'quantity',
@@ -44,7 +44,7 @@ export class VeiwComponent implements OnInit {
     this.searchprop=prop.target.value;
   }
 
-  changeAmount(posNeg: boolean) {
+  changeAmount(amount: number) {
     if (posNeg) this.amount += 1
     else this.amount -= 1
   }

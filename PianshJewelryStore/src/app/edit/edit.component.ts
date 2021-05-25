@@ -75,7 +75,8 @@ export class EditComponent implements OnInit {
       '',
       '',
       ''));
-    this.router.navigate(['/home']);
+    this.jewelryService.getJewlries();
+    this.router.navigate(['/veiw']);
   }
 
   onReset() {
