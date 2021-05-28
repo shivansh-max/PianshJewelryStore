@@ -1,6 +1,5 @@
 use piansh;
 
-drop table jewelry;
 
 create table Jewelry(
 		id varchar(50) ,brand varchar(150) ,purchasedfrom varchar(700),nameofitem varchar(100) ,
