@@ -27,7 +27,7 @@ public class PaginationSortJewelryManagement {
     // Pagination
 
     public Page<Jewelry> pagination(int size, int page) {
-        log.info("Got all of paginatited Items Asked :)");
+        // log.info("Got all of paginatited Items Asked :)");
         Pageable pageable = PageRequest.of(page, size);
         return jewelrySortAndPaginationRepo.findAll(pageable);
     }
@@ -35,7 +35,7 @@ public class PaginationSortJewelryManagement {
     // Sort
 
     public Page<Jewelry> sortAll(String whatToSort, boolean ascending) {
-        log.info("Sorted the items :)");
+        // log.info("Sorted the items :)");
         int size = jewelryMainRepo.findAll().size();
 
         Pageable pageable;
@@ -49,28 +49,27 @@ public class PaginationSortJewelryManagement {
 
             case "nameofitem":
                 pageable = PageRequest.of(0, size, Sort.by("nameofitem"));
-                
+
             case "cost":
                 if (ascending) {
                     pageable = PageRequest.of(0, size, Sort.by("cost").ascending());
-                }else {
+                } else {
                     pageable = PageRequest.of(0, size, Sort.by("cost").descending());
                 }
-                
+
             case "orderid":
                 pageable = PageRequest.of(0, size, Sort.by("orderid"));
 
             case "datapuchesed":
                 pageable = PageRequest.of(0, size, Sort.by("datapuchesed"));
 
-                //int
+                // int
             case "weight":
                 if (ascending) {
                     pageable = PageRequest.of(0, size, Sort.by("weight").ascending());
                 } else {
                     pageable = PageRequest.of(0, size, Sort.by("weight").descending());
                 }
-                
 
             case "conditionofitem":
                 pageable = PageRequest.of(0, size, Sort.by("cost"));
@@ -80,24 +79,24 @@ public class PaginationSortJewelryManagement {
 
             case "stone":
                 pageable = PageRequest.of(0, size, Sort.by("datapuchesed"));
-                
+
             case "quantity":
                 if (ascending) {
                     pageable = PageRequest.of(0, size, Sort.by("weight").ascending());
-                }else {
+                } else {
                     pageable = PageRequest.of(0, size, Sort.by("weight").descending());
                 }
-                
+
             case "soldin":
                 pageable = PageRequest.of(0, size, Sort.by("datapuchesed"));
-                
+
             case "salesprice":
-            if (ascending) {
-                pageable = PageRequest.of(0, size, Sort.by("salesprice").ascending());
-            }else {
-                pageable = PageRequest.of(0, size, Sort.by("salesprice").descending());
-            }
-                    
+                if (ascending) {
+                    pageable = PageRequest.of(0, size, Sort.by("salesprice").ascending());
+                } else {
+                    pageable = PageRequest.of(0, size, Sort.by("salesprice").descending());
+                }
+
             case "pandoraid":
                 pageable = PageRequest.of(0, size, Sort.by("pandoraid"));
 
@@ -105,13 +104,13 @@ public class PaginationSortJewelryManagement {
             default:
                 throw new IllegalStateException("Unexpected value: " + whatToSort);
         }
-        
+
         return jewelrySortAndPaginationRepo.findAll(pageable);
     }
 
     // Paginate - Sort
-    public Page<Jewelry> sortPaginate(String whatToSort, boolean ascending, int size, int page){
-        log.info("Sorted the items and paginated them :)");
+    public Page<Jewelry> sortPaginate(String whatToSort, boolean ascending, int size, int page) {
+        // log.info("Sorted the items and paginated them :)");
 
         Pageable pageable;
 
@@ -128,7 +127,7 @@ public class PaginationSortJewelryManagement {
             case "cost":
                 if (ascending) {
                     pageable = PageRequest.of(page, size, Sort.by("cost").ascending());
-                }else {
+                } else {
                     pageable = PageRequest.of(page, size, Sort.by("cost").descending());
                 }
 
@@ -138,14 +137,13 @@ public class PaginationSortJewelryManagement {
             case "datapuchesed":
                 pageable = PageRequest.of(page, size, Sort.by("datapuchesed"));
 
-                //int
+                // int
             case "weight":
                 if (ascending) {
                     pageable = PageRequest.of(page, size, Sort.by("weight").ascending());
                 } else {
                     pageable = PageRequest.of(page, size, Sort.by("weight").descending());
                 }
-
 
             case "conditionofitem":
                 pageable = PageRequest.of(page, size, Sort.by("cost"));
@@ -159,7 +157,7 @@ public class PaginationSortJewelryManagement {
             case "quantity":
                 if (ascending) {
                     pageable = PageRequest.of(page, size, Sort.by("weight").ascending());
-                }else {
+                } else {
                     pageable = PageRequest.of(page, size, Sort.by("weight").descending());
                 }
 
@@ -169,7 +167,7 @@ public class PaginationSortJewelryManagement {
             case "salesprice":
                 if (ascending) {
                     pageable = PageRequest.of(page, size, Sort.by("salesprice").ascending());
-                }else {
+                } else {
                     pageable = PageRequest.of(page, size, Sort.by("salesprice").descending());
                 }
 

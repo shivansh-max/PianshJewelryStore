@@ -25,15 +25,15 @@ public class SimpleJewelryManagement {
 
     // Get All Jewelries
     public List<Jewelry> getAll() {
-        log.info("Alright I think that I found some items for you :)");
+         log.info("Alright I think that I found some items for you :)");
         return jewelryMainRepo.findAll();
     }
 
     // Get One Jewelry
     public Jewelry getOne(String id) {
 
-        log.info("I found the things that you want :)");
-        log.error("Could not find the things that you want :(");
+         log.info("I found the things that you want :)");
+         log.error("Could not find the things that you want :(");
 
         return jewelryMainRepo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Could not find the things that you want :("));
@@ -44,7 +44,7 @@ public class SimpleJewelryManagement {
     // Delete All
     public String deleteAll() {
 
-        log.info("Got rid of all of them !!!");
+         log.info("Got rid of all of them !!!");
 
         jewelryMainRepo.deleteAll();
         return "Got rid of all of them !!!";
@@ -52,8 +52,8 @@ public class SimpleJewelryManagement {
 
     // Delete One
     public List<Jewelry> deleteOne(String id) {
-        log.info("So I could find it so here is all of them left :)");
-        log.error("So I couldn't find it but here is all of them :(");
+         log.info("So I could find it so here is all of them left :)");
+         log.error("So I couldn't find it but here is all of them :(");
 
         jewelryMainRepo.deleteById(id);
 
@@ -67,9 +67,9 @@ public class SimpleJewelryManagement {
     // Main Put Function
     public List<Jewelry> editOneJewelry(String id, Jewelry jewelry) {
 
-        log.info("Edited your item here is all of them :)");
+         log.info("Edited your item here is all of them :)");
 
-        log.error("Couldn't edited your item here is all of them :)");
+         log.error("Couldn't edited your item here is all of them :)");
 
         Jewelry oldJewelry = jewelryMainRepo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Couldn't edited your item here is all of them :)"));
@@ -86,7 +86,7 @@ public class SimpleJewelryManagement {
 
     // Main Post Function
     public List<Jewelry> addOneJewelry(Jewelry jewelry) {
-        log.info("Saved the jewelry you gave me :)");
+         log.info("Saved the jewelry you gave me :)");
 
         jewelryMainRepo.save(jewelry);
 

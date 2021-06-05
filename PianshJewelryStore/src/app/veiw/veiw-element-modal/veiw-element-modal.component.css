@@ -1,0 +1,16 @@
+.border-floating-card {
+  border-color: #525252;
+  border-style: solid;
+  /* TOP & BOTTOM: 5px, LEFT & RIGHT: 20px */
+  border-width: 5px 20px;
+  /* OR - TOP: 5px, RIGHT: 20px, BOTTOM: 10px, LEFT: 15px */
+  border-width: 3px 3px 3px 3px;
+  border-radius: 5px;
+}
+
+.center {
+  /* text-align: center; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}

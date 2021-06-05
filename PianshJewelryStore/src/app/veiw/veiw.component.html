@@ -1,84 +1,78 @@
 <div class="col-xl-12">
-
   <div class="row">
-
     <div class="main">
-
       <input
         type="text"
         placeholder="Search"
         width="100p"
         class="form-control blue"
-        [ngModel]="searchprop">
+        [ngModel]="searchprop"
+      />
       <button class="btn btn-danger">🔍</button>
 
-      <button class="btn btn-danger shad">
-        View All
-      </button>
+      <button class="btn btn-danger shad">View All</button>
 
       <select
         class="btn btn-danger"
         name="Look~In"
-        style="color: white;"
-        (change)="setstr($event)">
+        style="color: white"
+        (change)="setstr($event)"
+      >
         <option style="color: white">Look~In</option>
         <option
           value=""
           class="form-control"
           *ngFor="let prop of props"
-          [ngValue]="prop">
-          {{prop}}
+          [ngValue]="prop"
+        >
+          {{ prop }}
         </option>
       </select>
 
-      <select
-        class="btn btn-danger"
-        name="Look~In"
-        style="color: white;">
+      <select class="btn btn-danger" name="Look~In" style="color: white">
         <option style="color: white">Sort-by</option>
         <option
           value=""
           class="form-control"
           *ngFor="let prop of props"
-          [ngValue]="prop">
-          {{prop}}
+          [ngValue]="prop"
+        >
+          {{ prop }}
         </option>
       </select>
-
     </div>
-
   </div>
 
   <div class="row">
-<!--    <div class="main">-->
-<!--      <button (click)="changePage(false)" class="quad btn btn-info">⟸</button>-->
-<!--      <button (click)="changePage(true)" class="quad btn btn-info">⟹</button>-->
-<!--      <button (click)="changeAmount(true)" class="quad btn-happy">⇑</button>-->
-<!--      <button (click)="changeAmount(false)" class="quad btn-happy">⇓</button>-->
-<!--    </div>-->
-<!--    <div class="main">-->
-<!--      <div class="width-fifty main">-->
-<!--        <h3 style="color: #000000;">Page : </h3>-->
-<!--        <h3 style="color: #5bc0de;">{{ page + 1 }}</h3>-->
-<!--      </div>-->
-<!--      <div class="width-fifty main">-->
-<!--        <h3 style="color: #000000;">Pagination Amount : </h3>-->
-<!--        <h3 style="color: #ff00f7;">{{ amount + 1 }}</h3>-->
-<!--      </div>-->
-<!--    </div>-->
+    <!--    <div class="main">-->
+    <!--      <button (click)="changePage(false)" class="quad btn btn-info">⟸</button>-->
+    <!--      <button (click)="changePage(true)" class="quad btn btn-info">⟹</button>-->
+    <!--      <button (click)="changeAmount(true)" class="quad btn-happy">⇑</button>-->
+    <!--      <button (click)="changeAmount(false)" class="quad btn-happy">⇓</button>-->
+    <!--    </div>-->
+    <!--    <div class="main">-->
+    <!--      <div class="width-fifty main">-->
+    <!--        <h3 style="color: #000000;">Page : </h3>-->
+    <!--        <h3 style="color: #5bc0de;">{{ page + 1 }}</h3>-->
+    <!--      </div>-->
+    <!--      <div class="width-fifty main">-->
+    <!--        <h3 style="color: #000000;">Pagination Amount : </h3>-->
+    <!--        <h3 style="color: #ff00f7;">{{ amount + 1 }}</h3>-->
+    <!--      </div>-->
+    <!--    </div>-->
   </div>
 
-  <hr>
+  <hr />
 
   <ul class="list-group">
     <app-veiw-element
       *ngFor="let jewel of jewlries; let i = index"
       [jewelry]="jewel"
       [index]="i"
-      [color]="i%2 == 0">
+      [color]="i % 2 == 0"
+    >
     </app-veiw-element>
   </ul>
-
 </div>
 
-<!--<app-sitemap></app-sitemap>-->
+<router-outlet></router-outlet>

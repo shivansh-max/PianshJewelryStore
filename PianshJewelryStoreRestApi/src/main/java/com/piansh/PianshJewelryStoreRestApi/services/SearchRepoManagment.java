@@ -15,7 +15,7 @@ public class SearchRepoManagment {
     SearchJewelryRepo searchRepo;
 
     public ArrayList<Jewelry> getSearchRepo(String where, String what) {
-        log.info("Found them :)");
+        // log.info("Found them :)");
         switch (where) {
             case "brand":
                 return searchRepo.brand(what);

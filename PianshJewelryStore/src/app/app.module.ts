@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +21,7 @@ import { AppPasswordDirective } from './Shared/app-password.directive';
 import { LostComponent } from './SimpleComponents/lost/lost.component';
 import { SitemapComponent } from './SimpleComponents/sitemap/sitemap.component';
 import { EditComponent } from './edit/edit.component';
+import { VeiwElementModalComponent } from './veiw/veiw-element-modal/veiw-element-modal.component';
 // import { FilterPipe } from './Shared/filter.pipe';
 
 @NgModule({
@@ -37,6 +41,7 @@ import { EditComponent } from './edit/edit.component';
     LostComponent,
     SitemapComponent,
     EditComponent,
+    VeiwElementModalComponent,
   ],
   imports: [
     BrowserModule,

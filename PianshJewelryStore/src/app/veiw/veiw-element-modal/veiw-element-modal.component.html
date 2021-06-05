@@ -1,0 +1,39 @@
+<div class="border border-secondary border-floating-card col-lg-6">
+  <h3 class="modal-title text-center">
+    {{ jewelry.nameOfItem }}
+  </h3>
+
+  <hr />
+
+  <div class="col">
+    <img [src]="jewelry.pic" alt="" class="col-lg-6" height="300px" />
+  </div>
+
+  <div class="col">
+    <p class="list-group-item-text">Brand : {{ jewelry.brand }}</p>
+    <p class="list-group-item-text">
+      Purchased From : {{ jewelry.purchasedFrom }}
+    </p>
+    <p class="list-group-item-text">Quantity : {{ jewelry.quantity }}</p>
+    <p class="list-group-item-text">
+      Condition : {{ jewelry.conditionOfItem }}
+    </p>
+    <p class="list-group-item-text">Metal : {{ jewelry.metal }}</p>
+    <p class="list-group-item-text">Cost : ${{ jewelry.cost }}</p>
+    <p class="list-group-item-text">OrderId : {{ jewelry.orderId }}</p>
+    <p class="list-group-item-text">
+      Date Purchased : {{ jewelry.dataPurchesed | date }}
+    </p>
+    <p class="list-group-item-text">Weight : {{ jewelry.weight }}g.</p>
+    <p class="list-group-item-text">Stone : {{ jewelry.stone }}</p>
+    <p class="list-group-item-text">Sold In : ${{ jewelry.soldin }}</p>
+    <p class="list-group-item-text">Sales Price : {{ jewelry.salesprice }}</p>
+    <p class="list-group-item-text">Pandora Id : {{ jewelry.pandoraid }}</p>
+
+    <!-- <button class="button btn-danger" routerLink="/veiw" routerLinkActive="router-link-active" >Ok !!!</button> -->
+  </div>
+
+  <button class="button btn-danger" routerLink="/veiw" (click)="close()">
+    Ok !!!
+  </button>
+</div>

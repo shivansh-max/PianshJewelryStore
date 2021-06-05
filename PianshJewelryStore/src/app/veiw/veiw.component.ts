@@ -45,8 +45,6 @@ export class VeiwComponent implements OnInit {
   }
 
   changeAmount(amount: number) {
-    if (posNeg) this.amount += 1
-    else this.amount -= 1
   }
 
   changePage(posNeg: boolean) {
