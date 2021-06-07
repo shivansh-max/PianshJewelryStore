@@ -1,9 +1,7 @@
 <a
   style="cursor: pointer"
-  [routerLink]="['/veiw/veiw-item']"
-  [queryParams]="{ id: jewelry.id, index: index }"
+  (click)="openModal()"
   [ngClass]="{ 'list-group-item-info': color }"
-  fragment="veiwing"
   class="list-group-item clearfix"
 >
   <div class="col">
@@ -47,7 +45,7 @@
   </div>
 
   <div class="col">
-    <p class="list-group-item-text">Sold In : ${{ jewelry.soldin }}</p>
+    <p class="list-group-item-text">Sold In : {{ jewelry.soldin }}</p>
     <p class="list-group-item-text">Sales Price : {{ jewelry.salesprice }}</p>
     <p class="list-group-item-text">Pandora Id : {{ jewelry.pandoraid }}</p>
   </div>

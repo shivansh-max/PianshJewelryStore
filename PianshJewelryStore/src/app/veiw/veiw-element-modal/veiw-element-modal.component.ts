@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Jewlry } from 'src/app/Shared/jewlry.model';
 import { JewlryService } from 'src/app/Shared/jewlry.service';
+import { PasserForModalService } from '../Shared/passer-for-modal.service';
 
 @Component({
   selector: 'app-veiw-element-modal',
@@ -9,24 +11,20 @@ import { JewlryService } from 'src/app/Shared/jewlry.service';
   styleUrls: ['./veiw-element-modal.component.css'],
 })
 export class VeiwElementModalComponent implements OnInit {
-  id!: number;
-  index!: number;
   jewelry!: Jewlry;
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private jewelryService: JewlryService
+    public dialogRef: MatDialogRef<VeiwElementModalComponent>,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
+    public passer: PasserForModalService
   ) {}
 
-  ngOnInit(): void {
-    this.id = this.route.snapshot.queryParams.id
-    this.index = this.route.snapshot.queryParams.index
+  ngOnInit() {
 
-    this.jewelry = this.jewelryService.getByIndex(this.index)
+    this.jewelry = this.passer.jewelry;
   }
 
   close() {
-    this.router.navigate(['/veiw'])
+    this.dialogRef.close();
   }
 }

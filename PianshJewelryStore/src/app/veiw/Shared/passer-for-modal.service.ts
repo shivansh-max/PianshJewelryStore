@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Jewlry } from 'src/app/Shared/jewlry.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PasserForModalService {
-  public emitter = new Subject<number>();
+  public emitter = new Subject<Jewlry>();
+
+  public jewelry!: Jewlry;
 
   constructor() { }
 
-  emit(num: number) {
-    this.emitter.next(num)
+  emit(jewelry: Jewlry) {
+    this.emitter.next(jewelry)
   }
 }
