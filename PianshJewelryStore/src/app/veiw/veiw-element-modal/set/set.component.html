@@ -1,0 +1,58 @@
+<table class="table table-sm table-striped col-lg-6">
+  <thead>
+    <tr>
+      <th scope="col">Property</th>
+      <th scope="col">Value</th>
+    </tr>
+    <tbody>
+      <tr>
+        <th scope="row">Brand</th>
+        <td>{{ jewelry.brand }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Purchased From</th>
+        <td>{{ jewelry.purchasedFrom }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Quantity</th>
+        <td>{{ jewelry.quantity }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Condition</th>
+        <td>{{ jewelry.conditionOfItem }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Metal</th>
+        <td>{{ jewelry.metal}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Cost</th>
+        <td>${{ jewelry.cost }}</td>
+      </tr>
+            <tr>
+        <th scope="row">Order-Id</th>
+        <td>{{ jewelry.orderId }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Date-Purchased</th>
+        <td>{{ jewelry.dataPurchesed | date }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Weight</th>
+        <td>{{ jewelry.weight }}g.</td>
+      </tr>
+      <tr>
+        <th scope="row">Stone</th>
+        <td>{{ jewelry.stone }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Sales-Price</th>
+        <td>{{ jewelry.salesprice}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Pandora-Id</th>
+        <td>${{ jewelry.pandoraid }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <img [src]="jewelry.pic" class = "col-lg-6" alt="">
