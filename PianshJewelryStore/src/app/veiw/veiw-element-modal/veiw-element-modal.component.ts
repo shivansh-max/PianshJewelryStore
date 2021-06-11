@@ -13,6 +13,8 @@ import { PasserForModalService } from '../Shared/passer-for-modal.service';
 export class VeiwElementModalComponent implements OnInit {
   jewelry!: Jewlry;
 
+  edit_veiw: boolean = true;
+
   constructor(
     public dialogRef: MatDialogRef<VeiwElementModalComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
@@ -26,5 +28,9 @@ export class VeiwElementModalComponent implements OnInit {
 
   close() {
     this.dialogRef.close();
+  }
+
+  change() {
+    this.edit_veiw = !this.edit_veiw
   }
 }

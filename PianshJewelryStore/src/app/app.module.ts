@@ -17,12 +17,12 @@ import { SearchPipe } from './Shared/search.pipe';
 import { LoginComponent } from './SimpleComponents/login/login.component';
 import { AppPasswordDirective } from './Shared/app-password.directive';
 import { LostComponent } from './SimpleComponents/lost/lost.component';
-import { SitemapComponent } from './SimpleComponents/sitemap/sitemap.component';
-import { EditComponent } from './edit/edit.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SitemapComponent } from './SimpleComponents/sitemap/sitemap.component';import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { VeiwElementModalComponent } from './veiw/veiw-element-modal/veiw-element-modal.component';
+import { SetComponent } from './veiw/veiw-element-modal/set/set.component';
+import { EditComponent } from './veiw/veiw-element-modal/edit/edit.component';
 // import { FilterPipe } from './Shared/filter.pipe';
 
 @NgModule({
@@ -41,8 +41,9 @@ import { VeiwElementModalComponent } from './veiw/veiw-element-modal/veiw-elemen
     AppPasswordDirective,
     LostComponent,
     SitemapComponent,
-    EditComponent,
     VeiwElementModalComponent,
+    SetComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
