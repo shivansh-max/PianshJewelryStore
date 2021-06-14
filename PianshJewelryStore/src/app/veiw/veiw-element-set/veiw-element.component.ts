@@ -42,6 +42,7 @@ export class VeiwElementComponent implements OnInit {
     dialogConfig.width = '600px';
 
     this.passer.jewelry = this.jewelry;
+    this.passer.index = this.index;
     // console.log(this.passer.jewelry);
     
 

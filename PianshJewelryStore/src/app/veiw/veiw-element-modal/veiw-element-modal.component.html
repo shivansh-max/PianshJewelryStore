@@ -1,4 +1,5 @@
 <div class="center border-floating-card">
+
   <h3 class="modal-title col-lg-10">
     {{ jewelry.nameOfItem }}
   </h3>
@@ -7,17 +8,16 @@
   <button class="btn btn-primary col-lg-1" (click)="change()" *ngIf = "edit_veiw">Edit</button>
   <button class="btn btn-primary col-lg-1" (click)="change()" *ngIf = "!edit_veiw">Veiw</button>
 
-
   <hr class="very-black-line" />
 
   <div class="row">
 
-    <div class="col" *ngIf = "edit_veiw">
+    <div *ngIf = "edit_veiw">
       <app-set [jewelry] = "jewelry"></app-set>
     </div>
     
-    <div class="col" *ngIf = "!edit_veiw">
-      <h1>Edit works</h1>
+    <div *ngIf = "!edit_veiw">
+      <app-edit [id] = "jewelry.id" [jewelry] = "jewelry" [index] = "index"></app-edit>
     </div>
   </div>
 </div>

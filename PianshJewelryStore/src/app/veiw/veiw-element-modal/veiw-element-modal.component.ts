@@ -12,6 +12,7 @@ import { PasserForModalService } from '../Shared/passer-for-modal.service';
 })
 export class VeiwElementModalComponent implements OnInit {
   jewelry!: Jewlry;
+  index!: number;
 
   edit_veiw: boolean = true;
 
@@ -22,8 +23,8 @@ export class VeiwElementModalComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
     this.jewelry = this.passer.jewelry;
+    this.index = this.passer.index;
   }
 
   close() {

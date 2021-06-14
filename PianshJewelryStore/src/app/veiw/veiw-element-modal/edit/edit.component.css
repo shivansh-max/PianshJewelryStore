@@ -1,0 +1,21 @@
+.edit-group {
+	margin-left: 40px;
+}
+
+.leftify {
+	margin-left: 10px;
+}
+
+.topify {
+	margin-top: 25px;
+}
+
+h3 {
+	background-color: #000000;
+}
+
+img {
+	margin-left: 90px;
+	max-height: 450px;
+	max-width: 450px;
+}

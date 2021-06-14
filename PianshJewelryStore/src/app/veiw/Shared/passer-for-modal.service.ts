@@ -9,6 +9,7 @@ export class PasserForModalService {
   public emitter = new Subject<Jewlry>();
 
   public jewelry!: Jewlry;
+  public index!: number;
 
   constructor() { }
 

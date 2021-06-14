@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Jewlry} from './../../../Shared/jewlry.model';
-import {JewlryService} from './../../../Shared/jewlry.service';
+import {ActivatedRoute, Params, Router} from '@angular/router';
+import {Jewlry} from '../Shared/jewlry.model';
+import {JewlryService} from '../Shared/jewlry.service';
 
 @Component({
   selector: 'app-edit',
@@ -15,17 +16,24 @@ export class EditComponent implements OnInit {
 
   editForm!: FormGroup
 
-  @Input() id!: string;
-  @Input() index!: number;
-  @Input() jewelry!: Jewlry;
+  id!: string;
+  index!: number;
+  jewelry: Jewlry;
 
   constructor(
+    private route : ActivatedRoute,
+    private router : Router,
     private jewelryService: JewlryService) {
+    this.jewelry = new Jewlry("0", '', '', '', 0, '', '', '', 0, '', '', '', 0, '', '', '', '', '', '')
   }
 
   ngOnInit(): void {
 
     console.log("got")
+    this.id = this.route.snapshot.queryParams.id
+    this.index = this.route.snapshot.queryParams.index
+
+    this.jewelry = this.jewelryService.getByIndex(this.index)
 
     this.editForm = new FormGroup({
       "brand": new FormControl(this.jewelry.brand, [Validators.required]),
@@ -68,6 +76,7 @@ export class EditComponent implements OnInit {
       '',
       ''));
     this.jewelryService.getJewlries();
+    this.router.navigate(['/veiw']);
   }
 
   onReset() {
