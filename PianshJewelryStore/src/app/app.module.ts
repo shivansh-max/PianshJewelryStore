@@ -3,7 +3,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,12 +16,14 @@ import { SearchPipe } from './Shared/search.pipe';
 import { LoginComponent } from './SimpleComponents/login/login.component';
 import { AppPasswordDirective } from './Shared/app-password.directive';
 import { LostComponent } from './SimpleComponents/lost/lost.component';
-import { SitemapComponent } from './SimpleComponents/sitemap/sitemap.component';import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SitemapComponent } from './SimpleComponents/sitemap/sitemap.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { VeiwElementModalComponent } from './veiw/veiw-element-modal/veiw-element-modal.component';
 import { SetComponent } from './veiw/veiw-element-modal/set/set.component';
 import { EditComponent } from './veiw/veiw-element-modal/edit/edit.component';
+import { PaginationAmountCounterService } from './Shared/pagination-amount-counter.service';
 // import { FilterPipe } from './Shared/filter.pipe';
 
 @NgModule({
@@ -53,10 +54,10 @@ import { EditComponent } from './veiw/veiw-element-modal/edit/edit.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [VeiwElementModalComponent]
+  entryComponents: [VeiwElementModalComponent],
 })
-export class AppModule { }
+export class AppModule {}

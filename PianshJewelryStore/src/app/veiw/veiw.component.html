@@ -1,19 +1,27 @@
 <div class="col-xl-12">
   <div class="row">
     <div class="main">
-      <input
-        type="text"
-        placeholder="Search"
-        width="100p"
-        class="form-control blue"
-        [ngModel]="searchprop"
-      />
-      <button class="btn btn-danger">🔍</button>
+      <div style="margin-right: 5px">
+        <input
+          type="text"
+          placeholder="Search"
+          width="100p"
+          list="vals"
+          class="form-control blue"
+          [ngModel]="searchthing"
+        />
 
-      <button class="btn btn-danger shad">View All</button>
+        <datalist id="vals">
+          <option *ngFor="let j of propsThatAreDefined" [value]="j"></option>
+        </datalist>
+      </div>
+
+      <button class="btn btn-primary">🔍</button>
+
+      <button class="btn btn-primary shad">View All</button>
 
       <select
-        class="btn btn-danger"
+        class="btn btn-primary"
         name="Look~In"
         style="color: white"
         (change)="setstr($event)"
@@ -21,7 +29,7 @@
         <option style="color: white">Look~In</option>
         <option
           value=""
-          class="form-control"
+          class="form-control btn-primary"
           *ngFor="let prop of props"
           [ngValue]="prop"
         >
@@ -29,39 +37,52 @@
         </option>
       </select>
 
-      <select class="btn btn-danger" name="Look~In" style="color: white">
+      <select class="btn btn-primary" name="Look~In" style="color: white">
         <option style="color: white">Sort-by</option>
         <option
           value=""
-          class="form-control"
+          class="form-control btn-primary"
           *ngFor="let prop of props"
           [ngValue]="prop"
         >
           {{ prop }}
         </option>
       </select>
+
+      <button
+        class="btn btn-primary"
+        (click)="changePage(false)"
+        [disabled]="canGoBack"
+      >
+        ◁
+      </button>
+
+      <!-- <select name="Amount" class="btn btn-primary">
+        <option style="color: white">Amount</option>
+        <button (click)="changeAmount(1)">1</button>
+      </select> -->
+
+      <select
+        class="btn btn-primary"
+        name="Stone"
+        id="sto"
+        (change)="changeAmount($event)"
+      >
+        <option value="" style="color: aliceblue">Amount</option>
+        <option class="btn btn-primary" *ngFor="let num of nums">
+          {{ num }}
+        </option>
+      </select>
+
+      <button
+        class="btn btn-primary"
+        (click)="changePage(true)"
+        [disabled]="canGoForward"
+      >
+        ▷
+      </button>
     </div>
   </div>
-
-  <div class="row">
-    <!--    <div class="main">-->
-    <!--      <button (click)="changePage(false)" class="quad btn btn-info">⟸</button>-->
-    <!--      <button (click)="changePage(true)" class="quad btn btn-info">⟹</button>-->
-    <!--      <button (click)="changeAmount(true)" class="quad btn-happy">⇑</button>-->
-    <!--      <button (click)="changeAmount(false)" class="quad btn-happy">⇓</button>-->
-    <!--    </div>-->
-    <!--    <div class="main">-->
-    <!--      <div class="width-fifty main">-->
-    <!--        <h3 style="color: #000000;">Page : </h3>-->
-    <!--        <h3 style="color: #5bc0de;">{{ page + 1 }}</h3>-->
-    <!--      </div>-->
-    <!--      <div class="width-fifty main">-->
-    <!--        <h3 style="color: #000000;">Pagination Amount : </h3>-->
-    <!--        <h3 style="color: #ff00f7;">{{ amount + 1 }}</h3>-->
-    <!--      </div>-->
-    <!--    </div>-->
-  </div>
-
   <hr />
 
   <ul class="list-group">

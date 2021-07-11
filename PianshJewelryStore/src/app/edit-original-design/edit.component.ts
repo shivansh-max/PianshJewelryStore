@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Jewlry} from '../Shared/jewlry.model';
 import {JewlryService} from '../Shared/jewlry.service';
+import {ApiManagerService} from '../Shared/api-manager.service';
 
 @Component({
   selector: 'app-edit',
@@ -23,17 +24,22 @@ export class EditComponent implements OnInit {
   constructor(
     private route : ActivatedRoute,
     private router : Router,
-    private jewelryService: JewlryService) {
+    private jewelryService: JewlryService,
+    private apiMan: ApiManagerService) {
     this.jewelry = new Jewlry("0", '', '', '', 0, '', '', '', 0, '', '', '', 0, '', '', '', '', '', '')
   }
 
   ngOnInit(): void {
 
-    console.log("got")
+    // console.log("got")
     this.id = this.route.snapshot.queryParams.id
     this.index = this.route.snapshot.queryParams.index
 
     this.jewelry = this.jewelryService.getByIndex(this.index)
+    this.apiMan.getProps().subscribe((o: any) => {
+      console.log(o);
+      return [o['metal'], o['stone'], o['condition']];
+    })
 
     this.editForm = new FormGroup({
       "brand": new FormControl(this.jewelry.brand, [Validators.required]),
@@ -52,6 +58,8 @@ export class EditComponent implements OnInit {
       "metal": new FormControl(this.jewelry.metal, [Validators.required]),
       "stone": new FormControl(this.jewelry.stone, [Validators.required])
     });
+
+
   }
 
   onSubmit(){

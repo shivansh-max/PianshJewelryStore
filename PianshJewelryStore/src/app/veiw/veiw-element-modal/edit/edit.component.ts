@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Jewlry} from './../../../Shared/jewlry.model';
 import {JewlryService} from './../../../Shared/jewlry.service';
+import {ApiManagerService} from '../../../Shared/api-manager.service';
 
 @Component({
   selector: 'app-edit',
@@ -20,12 +21,19 @@ export class EditComponent implements OnInit {
   @Input() jewelry!: Jewlry;
 
   constructor(
-    private jewelryService: JewlryService) {
+    private jewelryService: JewlryService,
+    private ApiMan: ApiManagerService) {
   }
 
   ngOnInit(): void {
 
-    console.log("got")
+    // console.log("got");
+
+    this.ApiMan.getProps().subscribe((x: any) => {
+      this.metals = x['metal']
+      this.stones = x['stone']
+      this.conditions = x['condition']
+    })
 
     this.editForm = new FormGroup({
       "brand": new FormControl(this.jewelry.brand, [Validators.required]),
@@ -68,6 +76,7 @@ export class EditComponent implements OnInit {
       '',
       ''));
     this.jewelryService.getJewlries();
+
   }
 
   onReset() {

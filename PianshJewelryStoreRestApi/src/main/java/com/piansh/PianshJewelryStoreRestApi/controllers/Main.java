@@ -31,6 +31,8 @@ public class Main {
     @Autowired
     PaginationSortJewelryManagement paginationSortJewelryManagement;
 
+    @Autowired
+    JewelryMainRepo jewelryMainRepo;
 
     // ALL GETS :
 
@@ -87,6 +89,11 @@ public class Main {
         return pass;
     }
 
+    // Length
+    @GetMapping(value = "/len")
+    public int len() {
+        return this.jewelryMainRepo.findAll().size();
+    }
 
     // ALL DELETES :
 

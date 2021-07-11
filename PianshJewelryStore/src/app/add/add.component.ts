@@ -4,6 +4,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Jewlry} from '../Shared/jewlry.model';
 import {JewlryService} from '../Shared/jewlry.service';
 import {Router} from '@angular/router';
+import {ApiManagerService} from '../Shared/api-manager.service';
 
 @Component({
   selector: 'app-add',
@@ -18,7 +19,7 @@ export class AddComponent implements OnInit {
 
   addForm!: FormGroup;
 
-  constructor(private jewlryService: JewlryService, private router: Router) {
+  constructor(private jewlryService: JewlryService, private router: Router,private apiMan: ApiManagerService) {
   }
 
   ngOnInit(): void {
@@ -40,6 +41,15 @@ export class AddComponent implements OnInit {
       'metal': new FormControl(null, [Validators.required]),
       'stone': new FormControl(null, [Validators.required])
     });
+
+    this.apiMan.getProps().subscribe((x: any) => {
+      this.metals = x['metal']
+      console.log(this.metals);
+      this.stones = x['stone']
+      console.log(this.stones);
+      this.conditions = x['condition']
+      console.log(this.conditions);
+    })
   }
 
   chooseCon(event: any) {
